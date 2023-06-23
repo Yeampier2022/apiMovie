@@ -1,0 +1,15 @@
+<div class="app">
+  <h1>Listados de peliculas</h1>
+  <form [formGroup]="form" class="search" (ngSubmit)="getMovies(form.value.searchTerm)">
+    <input type="text" formControlName="searchTerm" placeholder="Buscar pelicula" />
+    <button>
+      <img src="../../../assets/search.svg" alt="search" />
+    </button>
+  </form>
+  <div class="container">
+    <app-movies-card
+      *ngFor="let movie of movies"
+      [movie]="movie"
+    ></app-movies-card>
+  </div>
+</div>
